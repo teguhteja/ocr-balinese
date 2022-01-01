@@ -1,0 +1,112 @@
+# OCR 2022
+Created Senin 27 Desember 2021
+**Note OCR Aksara Bali**
+
+Denoise Document
+----------------
+Google : <https://www.google.com/search?q=denoise+dirty+document+python>
+
+- <https://colinpriest.com/2015/09/07/denoising-dirty-documents-part-6/> — in R
+- <https://www.pyimagesearch.com/2021/10/20/using-machine-learning-to-denoise-images-for-better-ocr-accuracy/?utm_source=pocket_mylist> — comment : need source code $24. already alternative
+- <https://medium.com/@sakeshpusuluri/denoising-dirty-documents-using-autoencoders-962dbbfcca50> — ok
+- <https://towardsdatascience.com/denoising-noisy-documents-6807c34730c4> — ok
+- <https://jpvt.github.io/post/documentcleanup/> — 
+- <https://debuggercafe.com/denoising-text-image-documents-using-autoencoders/>
+- <https://www.kaggle.com/michalbrezk/denoise-images-using-autoencoders-tf-keras> — tensorflow error
+
+### GAN Denoise Document
+- <https://pub.towardsai.net/cyclegan-as-a-denoising-engine-for-ocr-images-8d2a4988f769>
+- <https://stackoverflow.com/questions/58945985/randomly-generate-synthetic-noise-in-an-image-text-document>
+
+### dataset
+
+* <https://www.kaggle.com/c/denoising-dirty-documents/data>
+* <https://github.com/halachkin/Denoising-Dirty-Documents> 
+
+
+Problem Tensorflow
+------------------
+
+1. Please looking NVidia
+
+
+Translating Text
+----------------
+
+1. <https://www.pyimagesearch.com/2021/09/20/language-translation-and-ocr-with-tesseract-and-python/?utm_source=pocket_mylist> — comment : need running
+
+
+Autoencoder
+-----------
+
+1. <https://iq.opengenus.org/applications-of-autoencoders/>
+
+
+### Youtube Autoencoder
+
+* <https://www.youtube.com/watch?v=wPz3MPl5jvY&list=PLyqSpQzTE6M9gCgajvQbc68Hk_JKGBAYT&index=53>
+
+
+E-book OCR
+----------
+
+1. <https://www.passeidireto.com/arquivo/103209664/adrian-rosebrock-ocr-with-open-cv-tesseract-and-python-py-image-search>
+
+
+Source code OCR
+---------------
+- $24/month : <https://www.pyimagesearch.com/pyimagesearch-university/>
+- <https://pythonrepo.com/repo/AntonioBriPerez-Ocr-Denoiser-python-computer-vision> — source code pyimagesearch
+- <https://github.com/gandalf1819/Denoise-Noisy-Docs> — ok
+- <https://github.com/halachkin/Denoising-Dirty-Documents>
+
+
+GPU Tensorflow
+--------------
+
+1. <https://stackoverflow.com/questions/63896559/indexerror-list-index-out-of-range-in-google-colab>
+
+	pip install tensorflow-gpu==1.15
+
+
+Filter Denoise
+--------------
+<https://morioh.com/p/741e8cd3b5e7>
+
+### Median Filtering
+Median filtering is the simplest denoising technique and it follows two basic steps: first, obtain the “background” of an image using Median Filtering with a kernel size of 23 x 23, then subtract the background from the image. 
+
+### EDE Method
+Edge Detection, Dilation & Erosion (EDE Method)
+Edge detection methods identify the points where the image brightness changes sharply, to organize them into edges.
+
+![](./OCR_2022_files/pasted_image.png)
+
+### Adaptive Thresholding
+Another characteristic of the dirty images is that the text tends to be darker than the noise. Within dark noises, the text inside is even darker.
+
+![](./OCR_2022_files/pasted_image001.png)
+
+### Linear Regression
+Instead of modelling the entire image at once, we tried predicting the cleaned-up intensity for each pixel within the image and constructed a cleaned image by combining together a set of predicted pixel intensities using linear regression.
+
+### Autoencoders
+Autoencoders are neural networks composed of an encoder and a decoder. The encoder compresses the input data into a lower-dimensional representation.
+
+![](./OCR_2022_files/pasted_image002.png)
+
+Tips OCR Tesseract
+------------------
+<https://github.com/tesseract-ocr/langdata/issues/126#issuecomment-383492257>
+
+1. Collect training text in Javanese script (Unicode). You will need large number of lines, 500,000 or so to train from scratch. Or, if you can identify a current language/script supported by tesseract which is similar, then you can train by replacing layer, Try to get representative training text of about 50000 lines with 50 words each.
+2. Collect unicode fonts which can correctly render the above text. The more fonts you have the better it will be.
+3. Collect word frequency lists in Javanese script.
+4. Preferably use the linux platform for doing training.
+5. See <https://github.com/tesseract-ocr/tesseract/wiki/TrainingTesseract-4.00#training-just-a-few-layers>
+
+
+You can try this as it will be faster than training from scratch.
+Please post links to Javanese script related resources below.
+If there is a transliterator which convertes Javanese in Latin script to Javanese script, that can be used for converting the files for lang jav as a start.
+

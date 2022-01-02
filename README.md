@@ -9,3 +9,6 @@ OCR Balinese to Lontar from https://ban.wikisource.org/wiki/Kaca_Utama
 ![Unicode Basic Noto Sans Balinese](doc/unicode-basic-ntb.png "unicode basic Noto Sans Balinese").
 ## Tips using unicode 
 ![Tips using unicode](doc/tips-using-unicode.png "tips using unicode").
+
+# Flowchart membuat tesseract
+![Flowchart tesseract](doc/flowchart_tesseract.png "Flowchart tesseract").
